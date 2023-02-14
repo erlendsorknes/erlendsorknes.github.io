@@ -55,6 +55,17 @@ jobs:
         with:
           branch: gh-pages
           folder: dist
-  
+          
+  weekday_job:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: "Hello world when it's Monday"
+        run: echo "Hello $FIRST_NAME $MIDDLE_NAME $LAST_NAME, this is klink"
+        env:
+          FIRST_NAME: Erlend
+          MIDDLE_NAME: Klink
+          LAST_NAME: BobBob
+
 
   
